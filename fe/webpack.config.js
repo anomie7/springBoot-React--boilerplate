@@ -22,7 +22,8 @@ module.exports = {
     contentBase: './tmp'
   },
   module: {
-    rules: [{
+    rules: [
+      {
       test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
       use: {
@@ -33,7 +34,15 @@ module.exports = {
           plugins: ["react-hot-loader/babel"]
         }
       }
-    }]
+    },
+    {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ]
+    }
+  ]
   },
   devtool: 'inline-source-map',
   plugins: [
