@@ -1,10 +1,14 @@
 import React from 'react'
 
 class Hello extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    
     render() {
         return(
            <div>
-               <h1>Hello! React And Spring boot</h1>
+               <h1>Hello! {this.props.name}</h1>
            </div> 
         )
     }

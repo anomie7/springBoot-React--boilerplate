@@ -1,12 +1,14 @@
 import React from 'react';
-import Hello from './Hello'
+import Hello from './Hello';
+import MyClass from './MyClass';
 
-const componentName = () => {
+const App = () => {
     return (
         <div>
-            <Hello />
+            <Hello name="React & Spring boot!"/>
+            <MyClass/>
         </div>
     );
 };
 
-export default componentName;
+export default App;
