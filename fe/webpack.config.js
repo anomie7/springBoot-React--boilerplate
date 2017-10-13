@@ -11,5 +11,21 @@ module.exports = {
     output: {
         path: PATHS.build,
         filename: 'app-bundle.js',
-    }
+    },
+    module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                cacheDirectory: true,
+                presets: ['env', 'react'],
+                plugins: ["react-hot-loader/babel"]
+              }
+            }
+          }
+        ]
+      }
 };
