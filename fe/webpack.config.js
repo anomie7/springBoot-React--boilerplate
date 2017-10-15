@@ -15,6 +15,7 @@ module.exports = {
     publicPath: "/assets/"
   },
   devServer: {
+    hot: true,
     historyApiFallback: true,
     inline: true,
     port: 3000,
@@ -22,30 +23,29 @@ module.exports = {
     contentBase: './tmp'
   },
   module: {
-    rules: [
-      {
-      test: /\.js$/,
-      exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: true,
-          presets: ['env', 'react'],
-          plugins: ["react-hot-loader/babel"]
+    rules: [{
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            presets: ['env', 'react'],
+          }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
-    },
-    {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader'
-      ]
-    }
-  ]
+    ]
   },
   devtool: 'inline-source-map',
   plugins: [
     // new CleanWebpackPlugin([PATHS.build])
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

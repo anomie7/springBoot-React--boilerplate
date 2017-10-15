@@ -5,3 +5,7 @@ import './style.css'
 
 const rootElement = document.getElementById('react');    
 ReactDOM.render(<App/>, rootElement);
+
+if (module.hot) {
+    module.hot.accept();
+  }

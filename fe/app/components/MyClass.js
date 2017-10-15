@@ -9,7 +9,7 @@ class MyClass extends React.Component {
         this.state = {
             students : [
             {
-                name: "jimi1122",
+                name: "jimi",
                 major: "컴퓨터",
                 score: 84
             },

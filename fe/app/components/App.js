@@ -5,7 +5,7 @@ import MyClass from './MyClass';
 const App = () => {
     return (
         <div>
-            <Hello name="React & Spring boot!"/>
+            <Hello name="React22 & Spring boot!"/>
             <MyClass/>
         </div>
     );
